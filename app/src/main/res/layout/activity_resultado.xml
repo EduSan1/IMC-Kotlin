@@ -1,0 +1,24 @@
+<?xml version="1.0" encoding="utf-8"?>
+<LinearLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".ResultadoActivity"
+    android:gravity="center"
+    android:orientation="vertical">
+
+    <TextView
+        android:text="IMC:"
+        style="@style/label" />
+    <TextView
+        android:id="@+id/imc"
+        style="@style/conteudo" />
+    <TextView
+        android:text="Status:"
+        style="@style/label" />
+    <TextView
+        android:id="@+id/status"
+        style="@style/conteudo" />
+
+</LinearLayout>

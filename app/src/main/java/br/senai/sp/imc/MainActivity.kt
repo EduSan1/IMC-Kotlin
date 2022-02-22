@@ -1,5 +1,6 @@
 package br.senai.sp.imc
 
+import android.content.Intent
 import android.graphics.Color
 import androidx.appcompat.app.AppCompatActivity
 import android.os.Bundle
@@ -28,13 +29,18 @@ class MainActivity : AppCompatActivity() {
                 val peso = txtPeso.text.toString().toDouble()
                 val altura = txtAltura.text.toString().toDouble()
 
-                val imc = calcularImc(peso, altura)
+                val imc = definirImc(peso, altura)
+                val status =  definirStatus(imc)
                 val resultado = findViewById<TextView>(R.id.resultadoImc)
-                val status = findViewById<TextView>(R.id.resultadoStatus)
+                val statusa = findViewById<TextView>(R.id.resultadoStatus)
+                val dois = DecimalFormat("#,##0.00")
+                val intent = Intent(this, ResultadoActivity::class.java)
+                val imctxt = dois.format(imc).toString()
 
-                definirImc(imc,resultado,status)
+                intent.putExtra("imc",imctxt)
+                intent.putExtra("status",status)
 
-
+                startActivity(intent)
             }
 
         }
